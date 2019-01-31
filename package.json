@@ -1,0 +1,42 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "watch-ts": "tsc -w",
+    "watch-node": "nodemon dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbs2rbs/apiFilas.git"
+  },
+  "keywords": [
+    "Api",
+    "Filas",
+    "Cubos"
+  ],
+  "author": "Renan Bispo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbs2rbs/apiFilas/issues"
+  },
+  "homepage": "https://github.com/rbs2rbs/apiFilas#readme",
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "8.5.5",
+    "@types/typescript": "latest",
+    "class-validator": "0.9.1",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9",
+    "nyc": "^13.1.0",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "dependencies": {},
+  "description": ""
+}
