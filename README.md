@@ -83,21 +83,4 @@ As entradas são validadas e retornam erros caso não sejam válidas.
 
 #### /popLine - GET
 
-Neste endpoint pode-se remover um usuario inserido em fila utilizando a chave do email dele. A requisição é feita passando o email no body como JSON. Abaixo um exemplo de pesquisas.
-```
-{
-	"email" : "renan.bisposilva@gmail.com"
-}
-```
-```
-{
-	"nome" : "Renan"
-}
-```
-```
-{
-	"sobrenome" : "Bispo"
-}
-```
-
-As entradas são validadas e retornam erros caso não sejam válidas.
+Neste endpoint é removido o usuario que ocupa a primeira posição da fila, retornando o sucesso da operação. Abaixo um exemplo de pesquisas.

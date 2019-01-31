@@ -176,7 +176,6 @@ app.post('/findPosition', (req, res) => {
 });
 
 /** Método get que, path /showLine lista todos os usuarios presentes na fila.
- *  Os dados devem ser passado em formato JSON no body da requisição. 
  *  Retorna mensagens do que ocorreu na operação.
  */
 
@@ -229,40 +228,29 @@ app.post('/filterLine', (req, res) => {
 });
 
 /** Método get que, path /popLine remove o primeiro usuario que esteja na fila.
- *  Os dados devem ser passado em formato JSON no body da requisição. 
  *  Retorna mensagens do que ocorreu na operação.
  */
 
 
 app.get('/popLine', (req, res) => {
-    let post = new Post();
-    post.email = req.body.email;
-    post.nome = req.body.nome;
-    post.sobrenome = req.body.sobrenome;
-    validate(post).then(errors => {
-        if (errors.length > 0) {
-            return res.status(401).send (util.format("Erro na validação dos dados. Verifique se são entradas válidas"));
-        } else {
-            try{
-                if(usuarios==null) {
-                    return res.status(400).send('Nenhum usuario cadastrado, ainda!');
-                }else {
-                    if(Object.keys(fila.tabela).length === 0) {
-                        return res.status(400).send('Nenhum usuario entrou na fila!');
-                    }else {
-                        let removido: any = fila.tabela.shift();
-                        fila.tabela.forEach((i, index) => {
-                            i.pos = index+1;
-                        });
-                        return res.status(200).send(util.format("O usuario de email %s (primeiro da fila) foi removido com sucesso!!", removido.email));
-                    }
-                    }
-                    
-                }catch (err) {
-                    return res.status(500).send ('Erro');
+    try{
+        if(usuarios==null) {
+            return res.status(400).send('Nenhum usuario cadastrado, ainda!');
+        }else {
+            if(Object.keys(fila.tabela).length === 0) {
+                return res.status(400).send('Nenhum usuario entrou na fila!');
+            }else {
+                let removido: any = fila.tabela.shift();
+                fila.tabela.forEach((i, index) => {
+                    i.pos = index+1;
+                });
+                return res.status(200).send(util.format("O usuario de email %s (primeiro da fila) foi removido com sucesso!!", removido.email));
             }
-        }
-    });
+            }
+            
+        }catch (err) {
+            return res.status(500).send ('Erro');
+    }
 });
 
 
