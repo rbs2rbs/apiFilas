@@ -80,7 +80,7 @@ Neste endpoint pode-se verificar as informações de um usuario cadastrado, pesq
 
 As entradas são validadas e retornam erros caso não sejam válidas.
 
-popLine
+
 #### /popLine - GET
 
 Neste endpoint pode-se remover um usuario inserido em fila utilizando a chave do email dele. A requisição é feita passando o email no body como JSON. Abaixo um exemplo de pesquisas.
