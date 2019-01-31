@@ -3,7 +3,7 @@
 
 ### Preparando Ambiente
 
-Para preparação no ambiente para que seja rodada a aplicação em um OS linux é preciso instalar algumas coisas.
+Para preparação do ambiente de forma que seja rodada a aplicação em um OS Linux - Elementary é preciso instalar algumas coisas.
 
 Para instalar o `npm` basta utilizar o comando `sudo apt-get install npm` num console.
 Para instalar os demais requistos é preciso entrar no diretorio da aplicação e utilizar os seguintes comandos:
@@ -14,15 +14,15 @@ npm install
 
 ### Iniciando a Aplicação
 
-Para iniciar a aplicação, estando dentro do diretŕio dela, é so utilizar o comando `npm run watch-node`
+Para iniciar a aplicação, estando dentro do diretório dela, é so utilizar o comando `npm run watch-node`
 
-Deta forma a aplicação já estará funcionando. Acessando a url [http://localhost:3000](http://localhost:3000) será retornado "OK", mostrando que está funcionando
+Desta forma a aplicação já estará funcionando. Acessando a url [http://localhost:3000](http://localhost:3000) será retornado "OK", mostrando que está funcionando
 
 ### Testando os endpoints
 
 #### /createUser - POST
 
-Neste endpoint pode-se cadastrar um novo usuario, passando no body como JSON, "nome", "sobrenome" e "email", como no exemplo:
+Neste endpoint pode-se cadastrar um novo usuario, passando no body, como JSON, "nome", "sobrenome" e "email", como no exemplo abaixo:
 ```
 {
 	"nome" : "Renan",
@@ -35,7 +35,7 @@ As entradas são validadas e retornam erros caso não sejam válidas.
 
 #### /addToLine - POST
 
-Neste endpoint pode-se adcionar um usuario ja cadastrado a fila, passando no body como JSON, o "email". Não é possivel fazer a adição à fila de outra forma, já que o email é variavel unica, enquanto as demais podem se repetir. Também é válido dizer que se o usuario ainda não estiver cadastrado não poderá ser adcionado a fila, como no exemplo:
+Neste endpoint pode-se adcionar um usuario ja cadastrado a fila, passando no body, como JSON, o "email". Não é possivel fazer a adição à fila de outra forma, já que o email é variavel identificadora, enquanto as demais podem se repetir. Também é válido dizer que se o usuario ainda não estiver cadastrado não poderá ser adcionado a fila. Abaixo um exemplo:
 ```
 {
 	"email" : "renan.bisposilva@gmail.com"
@@ -46,7 +46,7 @@ As entradas são validadas e retornam erros caso não sejam válidas.
 
 #### /findPosition - POST
 
-Neste endpoint pode-se verificar a posição na fila de um usuario, que ja esteja inserido nela, passando no body como JSON, o "email". Caso o usuario portador do email passado não esteja inserido na fila a API rejeitará a consulta. Abaixo um exemplo de consulta válida:
+Neste endpoint pode-se verificar a posição na fila de um usuario, que já esteja inserido nela, passando no body, como JSON, o "email". Caso o usuario portador do email passado não esteja inserido na fila a API rejeitará a consulta. Abaixo um exemplo de consulta válida:
 ```
 {
 	"email" : "renan.bisposilva@gmail.com"
