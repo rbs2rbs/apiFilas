@@ -5,7 +5,7 @@
 
 Para preparação do ambiente de forma que seja rodada a aplicação em um OS Linux - Elementary é preciso instalar o `npm` o `typescript` e o `ts-node`.
 
-Para instalar o `npm` basta execuar o comando `sudo apt-get install npm` num console.
+Para instalar o `npm` basta executar o comando `sudo apt-get install npm` num console.
 Para instalar os demais requistos é preciso entrar no diretório da aplicação e utilizar os seguintes comandos:
 ```
 npm install -g typescript ts-node
@@ -46,7 +46,7 @@ As entradas são validadas e retornam erros caso não sejam válidas.
 
 #### /findPosition - POST
 
-Neste endpoint pode-se verificar a posição na fila de um usuário, que já esteja inserido nela, passando no body como JSON o "email". Caso o usuário portador do email passado não esteja inserido na fila a API rejeitará a consulta. Abaixo um exemplo de consulta válida:
+Neste endpoint pode-se verificar a posição na fila de um usuário, que já esteja inserido nela, passando no body como JSON o "email". Caso o usuário portador do email passado não esteja inserido na fila,, a API rejeitará a consulta. Abaixo um exemplo de consulta válida:
 ```
 {
 	"email" : "renan.bisposilva@gmail.com"
@@ -83,4 +83,4 @@ As entradas são validadas e retornam erros caso não sejam válidas.
 
 #### /popLine - GET
 
-Neste endpoint é removido o usuário que ocupa a primeira posição da fila, retornando o sucesso da operação. Abaixo um exemplo de pesquisas.
+Neste endpoint é removido o usuário que ocupa a primeira posição da fila, retornando o sucesso da operação.
